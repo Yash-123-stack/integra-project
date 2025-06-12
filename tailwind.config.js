@@ -9,6 +9,9 @@ module.exports = {
         lightPurple: "#c5aaff",
         darkBg: "#0d0d0d",
       },
+      backgroundImage: {
+        "banner-gradient": "linear-gradient(to right, #bdbdbd, #757575)"
+      }
     },
   },
   plugins: [],
