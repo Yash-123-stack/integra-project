@@ -8,31 +8,35 @@ export default function Navbar() {
   return (
     <>
       <section className="bg-darkBg">
-        <nav className="flex items-center w-container-xl justify-between px-6 py-4 shadow-md relative z-50">
-          <div className="font-bold text-gray-800 w-[40%] md:w-[20%]">
+        <nav className="flex items-center justify-between xl:px-16  sm:px-12 px-4 py-4 shadow-md relative z-50">
+          
+          <div className="font-bold text-gray-800  w-[40%] md:w-[20%]">
             <img
               src={logoImage}
-              className="w-[60%] cursor-pointer"
+              className="w-[60%]  cursor-pointer"
               alt="Integra Magna Logo"
             />
           </div>
 
           <ul className="hidden md:flex space-x-6 text-gray-200 font-medium">
-            {["services", "about-us", "cases"].map((id) => (
-              <li key={id}>
-                <div className="relative inline-block group pb-1 cursor-pointer">
-                  <a
-                    href={`#${id}`}
-                    className="text-white group-hover:text-blue-600 transition-all duration-500"
-                  >
-                    {id.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
-                  </a>
-                  <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-green-400 rounded-full transition-all duration-500 group-hover:w-full"></span>
-                </div>
-              </li>
+             {[
+              { name: "SERVICES", href: "https://www.integramagna.com/services" },
+              { name: "ABOUT US", href: "https://www.integramagna.com/about" },
+              { name: "CASES", href: "https://www.integramagna.com/work" },
+                ].map(({ name, href }) => (
+           <li key={name}>
+              <div className="relative inline-block group pb-1 cursor-pointer">
+               <a
+                href={href}
+                className="text-white group-hover:text-blue-600 transition-all duration-500"
+                >
+                {name}
+               </a>
+               <span className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-green-400 rounded-full transition-all duration-500 group-hover:w-full"></span>
+            </div>
+          </li>
             ))}
-          </ul>
-
+             </ul>
           <div className="hidden md:block group">
             <div className="inline-block p-[2px] rounded-full transition-all duration-500 bg-transparent group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-400">
               <button className="flex gap-2 items-center text-white bg-darkBg px-4 py-2 rounded-full transition-all duration-500">
