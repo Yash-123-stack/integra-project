@@ -82,19 +82,25 @@ export default function Navbar() {
             <FiX size={24} />
           </button>
 
-          <ul className="space-y-6 text-gray-200 font-medium mt-8">
-            {["services", "about-us", "cases"].map((id) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  className="block hover:text-blue-600"
-                  onClick={() => setIsOpen(false)}
+        <ul className="space-y-6 text-gray-200 font-medium mt-8">
+           {[
+             { id: "services", label: "Services", href: "https://www.integramagna.com/services" },
+             { id: "about-us", label: "About Us", href: "https://www.integramagna.com/about-us" },
+             { id: "cases", label: "Cases", href: "https://www.integramagna.com/cases" },
+                ].map(({ id, label, href }) => (
+          <li key={id}>
+              <a
+              href={href}
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
                 >
-                  {id.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
-                </a>
-              </li>
-            ))}
-          </ul>
+             {label}
+             </a>
+          </li>
+          ))}
+    </ul>
 
           <div className="mt-6">
             <button className="flex gap-2 text-white group">
